@@ -29,9 +29,9 @@ _This program takes in a word and sentence input, and tells you how many times t
 
 ## Setup/Installation Requirements
 
-* _Ensure that .NET and mono is installed on your computer._
+* _Ensure that .NET and mono are installed on your computer._
 * _Clone this Repository._
-* _Run WordCounter.exe using Mono in the command prompt._
+* _Run Program.exe using Mono in the command prompt._
 
 ## Support and contact details
 
