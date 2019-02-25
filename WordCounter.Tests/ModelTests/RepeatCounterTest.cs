@@ -18,5 +18,19 @@ namespace WordCounter.Tests{
       string message = rc.GetMessage();
       Assert.AreEqual("No matches were found.", message);
     }
+
+    [TestMethod]
+    public void GetMessage_OneMatch_OneMatchMessage(){
+      RepeatCounter rc = new RepeatCounter("foo", "the quick brown foo jumped over the lazy dog.");
+      string message = rc.GetMessage();
+      Assert.AreEqual("1 match was found.", message);
+    }
+
+    [TestMethod]
+    public void GetMessage_MultipleMatches_MultipleMatchesMessage(){
+      RepeatCounter rc = new RepeatCounter("foo", "the quick foo jumped over the foo foo foo");
+      string message = rc.GetMessage();
+      Assert.AreEqual("4 matches were found.", message);
+    }
   }
 }

@@ -14,9 +14,24 @@ namespace WordCounter{
       if(MyWord.Split(' ').Length > 1){
         return "Please only enter one word to search for!";
       }
-      else
-        return "";
+      else{
+        int count = CountMatches();
+        if(count == 0)
+          return "No matches were found.";
+        else if (count == 1)
+          return "1 match was found.";
+        else
+          return count + " matches were found.";
+      }
     }
 
+    public int CountMatches(){
+      int count = 0;
+      foreach(string word in MySentence){
+        if(word == MyWord)
+          count++;
+      }
+      return count;
+    }
   }
 }
