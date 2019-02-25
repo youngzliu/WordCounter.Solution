@@ -4,11 +4,19 @@ using WordCounter;
 namespace WordCounter.Tests{
   [TestClass]
   public class RepeatCounterTest{
+
     [TestMethod]
     public void GetMessage_NotOneWord_ErrorMessage(){
       RepeatCounter rc = new RepeatCounter("bla bla", "the quick brown fox");
       string message = rc.GetMessage();
       Assert.AreEqual("Please only enter one word to search for!", message);
+    }
+
+    [TestMethod]
+    public void GetMessage_NoMatches_NoMatchesMessage(){
+      RepeatCounter rc = new RepeatCounter("foo", "the quick brown fox jumped over the lazy dog.");
+      string message = rc.GetMessage();
+      Assert.AreEqual("No matches were found.", message);
     }
   }
 }
