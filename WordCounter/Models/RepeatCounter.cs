@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace WordCounter{
@@ -30,6 +31,10 @@ namespace WordCounter{
       foreach(string word in MySentence){
         if(word.ToLower() == MyWord)
           count++;
+        else if(word.Length > 1 && Char.IsPunctuation(word[word.Length - 1])){
+          if(word.Substring(0, word.Length - 1).ToLower() == MyWord)
+            count++;
+        }
       }
       return count;
     }

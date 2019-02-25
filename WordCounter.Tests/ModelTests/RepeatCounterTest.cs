@@ -39,5 +39,12 @@ namespace WordCounter.Tests{
       string message = rc.GetMessage();
       Assert.AreEqual("2 matches were found.", message);
     }
+
+    [TestMethod]
+    public void GetMessage_IgnoresPunctuation_TwoMatchesMessage(){
+      RepeatCounter rc = new RepeatCounter("fire", "The room caught on fire, everything was on fire!");
+      string message = rc.GetMessage();
+      Assert.AreEqual("2 matches were found.", message);
+    }
   }
 }
