@@ -27,10 +27,17 @@ namespace WordCounter.Tests{
     }
 
     [TestMethod]
-    public void GetMessage_MultipleMatches_MultipleMatchesMessage(){
+    public void GetMessage_MultipleMatches_FourMatchesMessage(){
       RepeatCounter rc = new RepeatCounter("foo", "the quick foo jumped over the foo foo foo");
       string message = rc.GetMessage();
       Assert.AreEqual("4 matches were found.", message);
+    }
+
+    [TestMethod]
+    public void GetMessage_IgnoresCase_TwoMatchesMessage(){
+      RepeatCounter rc = new RepeatCounter("FOO", "the quick brown foo jumped over the foo dog.");
+      string message = rc.GetMessage();
+      Assert.AreEqual("2 matches were found.", message);
     }
   }
 }

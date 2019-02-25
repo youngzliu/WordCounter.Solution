@@ -19,6 +19,9 @@ _This program takes in a word and sentence input, and tells you how many times t
 * _Program will return a count of how many times the search word appears in the sentence._
   * _Example input: "quick" is the search word for the sentence "the quick quick brown fox jumped over the lazy dog."_
   * _Example output: Message is outputted saying that two instances of the word were found._
+* _Program will ignore case._
+  * _Example input: "QUICK" is the search word for the sentence "the quick quick brown fox jumped over the lazy dog."_
+  * _Example output: Message is outputted saying that two instances of the word were found._
 * _Program will ignore punctuation at the end of a word._
   * _Example input: "fire" is the search word for the sentence "The room caught on fire, everything was on fire!"_
   * _Example output: Message is outputted saying that two counts of the word were found._

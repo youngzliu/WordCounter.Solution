@@ -6,7 +6,7 @@ namespace WordCounter{
     private string[] MySentence;
 
     public RepeatCounter(string word, string sentence){
-      MyWord = word;
+      MyWord = word.ToLower();
       MySentence = sentence.Split(' ');
     }
 
@@ -28,7 +28,7 @@ namespace WordCounter{
     public int CountMatches(){
       int count = 0;
       foreach(string word in MySentence){
-        if(word == MyWord)
+        if(word.ToLower() == MyWord)
           count++;
       }
       return count;
