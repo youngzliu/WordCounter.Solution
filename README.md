@@ -29,9 +29,12 @@ _This program takes in a word and sentence input, and tells you how many times t
 
 ## Setup/Installation Requirements
 
-* _Ensure that .NET and mono are installed on your computer._
-* _Clone this Repository._
-* _Run Program.exe using Mono in the command prompt._
+* _Download .NET Core 1.1.4 SDK, .NET Core Runtime 1.1.2 and Mono, and install them._
+* _Clone this Repository ($ git clone https://github.com/youngzliu/WordCounter.Solution name)_
+* _Change into the work directory ($ cd WordCounter.Solution)_
+* _To edit the project, open the project in your preferred text editor._
+* _To run the program, navigate to the directory of WordCounter, and then compile and execute ($ cd WordCounter $mcs Program.cs Models/RepeatCounter.cs; mono Program.exe)_
+* _To run the tests, use these commands: $ cd WordCounter.Tests $ dotnet test_
 
 ## Support and contact details
 
