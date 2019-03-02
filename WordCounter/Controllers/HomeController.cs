@@ -5,13 +5,26 @@ namespace WordCounter.Controllers
 {
   public class HomeController : Controller
   {
-    [Route("/message")]
-    public ActionResult Message(string word, string sentence) {
-      RepeatCounter rc = new RepeatCounter(word, sentence);
+    [HttpGet("/message")]
+    public ActionResult Message() {
+      RepeatCounter rc = new RepeatCounter("bob", "foo");
       return View(rc);
     }
 
-    [Route("/")]
-    public ActionResult Form() {return View();}
+    [HttpGet("/")]
+    public ActionResult Index(){
+      return View();
+    }
+
+    [HttpGet("/form")]
+    public ActionResult Form() {
+      return View();
+    }
+
+    [HttpPost("/newCounter")]
+    public ActionResult newCounter(string word, string sentence){
+      RepeatCounter rc = new RepeatCounter(word, sentence);
+      return View("Message", rc);
+    }
   }
 }
