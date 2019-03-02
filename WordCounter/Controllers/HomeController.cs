@@ -7,8 +7,7 @@ namespace WordCounter.Controllers
   {
     [HttpGet("/message")]
     public ActionResult Message() {
-      RepeatCounter rc = new RepeatCounter("bob", "foo");
-      return View(rc);
+      return View();
     }
 
     [HttpGet("/")]
