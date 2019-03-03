@@ -8,9 +8,9 @@ namespace WordCounter.Tests{
   [TestClass]
   public class WordControllerTest{
     [TestMethod]
-    public void Form_ReturnsCorrectViewType_True(){
+    public void New_ReturnsCorrectViewType_True(){
       WordCounterController controller = new WordCounterController();
-      ActionResult formView = controller.Form();
+      ActionResult formView = controller.New();
       Assert.IsInstanceOfType(formView, typeof(ViewResult));
     }
 

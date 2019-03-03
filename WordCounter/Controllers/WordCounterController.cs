@@ -10,8 +10,8 @@ namespace WordCounter.Controllers
       return View();
     }
 
-    [HttpGet("/form")]
-    public ActionResult Form() {
+    [HttpGet("/repeatCounter/new")]
+    public ActionResult New() {
       return View();
     }
 
