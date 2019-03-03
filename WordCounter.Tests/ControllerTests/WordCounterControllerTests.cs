@@ -8,17 +8,40 @@ namespace WordCounter.Tests{
   [TestClass]
   public class WordControllerTest{
     [TestMethod]
-    public void Form_ReturnsCorrectView_True(){
+    public void Form_ReturnsCorrectViewType_True(){
       WordCounterController controller = new WordCounterController();
       ActionResult formView = controller.Form();
       Assert.IsInstanceOfType(formView, typeof(ViewResult));
     }
 
     [TestMethod]
-    public void Message_ReturnsCorrectView_True(){
+    public void Message_ReturnsCorrectViewType_True(){
       WordCounterController controller = new WordCounterController();
       ActionResult messageView = controller.Message();
       Assert.IsInstanceOfType(messageView, typeof(ViewResult));
+    }
+
+    [TestMethod]
+    public void NewCounter_ReturnsCorrectViewType_True(){
+      WordCounterController controller = new WordCounterController();
+      ActionResult newCounterView = controller.NewCounter("bob", "foo");
+      Assert.IsInstanceOfType(newCounterView, typeof(ViewResult));
+    }
+
+    [TestMethod]
+    public void NewCounter_HasCorrectModelType_RepeatCounter(){
+      WordCounterController controller = new WordCounterController();
+      ViewResult newCounterView = controller.NewCounter("bob", "foo") as ViewResult;
+      var result = newCounterView.Model;
+      Assert.IsInstanceOfType(result, typeof(RepeatCounter));
+    }
+
+    [TestMethod]
+    public void NewCounter_RedirectsToCorrectView_Message(){
+      WordCounterController controller = new WordCounterController();
+      ViewResult newCounterView = controller.NewCounter("bob", "foo") as ViewResult;
+      var result = newCounterView.ViewName;
+      Assert.AreEqual(result, "Message");
     }
   }
 }
