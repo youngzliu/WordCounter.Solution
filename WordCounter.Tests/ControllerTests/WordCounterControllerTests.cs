@@ -22,24 +22,24 @@ namespace WordCounter.Tests{
     }
 
     [TestMethod]
-    public void NewCounter_ReturnsCorrectViewType_True(){
+    public void Create_ReturnsCorrectViewType_True(){
       WordCounterController controller = new WordCounterController();
-      ActionResult newCounterView = controller.NewCounter("bob", "foo");
+      ActionResult newCounterView = controller.Create("bob", "foo");
       Assert.IsInstanceOfType(newCounterView, typeof(ViewResult));
     }
 
     [TestMethod]
-    public void NewCounter_HasCorrectModelType_RepeatCounter(){
+    public void Create_HasCorrectModelType_RepeatCounter(){
       WordCounterController controller = new WordCounterController();
-      ViewResult newCounterView = controller.NewCounter("bob", "foo") as ViewResult;
+      ViewResult newCounterView = controller.Create("bob", "foo") as ViewResult;
       var result = newCounterView.Model;
       Assert.IsInstanceOfType(result, typeof(RepeatCounter));
     }
 
     [TestMethod]
-    public void NewCounter_RedirectsToCorrectView_Message(){
+    public void Create_RedirectsToCorrectView_Message(){
       WordCounterController controller = new WordCounterController();
-      ViewResult newCounterView = controller.NewCounter("bob", "foo") as ViewResult;
+      ViewResult newCounterView = controller.Create("bob", "foo") as ViewResult;
       var result = newCounterView.ViewName;
       Assert.AreEqual(result, "Message");
     }
