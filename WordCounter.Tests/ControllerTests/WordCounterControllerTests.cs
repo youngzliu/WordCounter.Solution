@@ -15,9 +15,9 @@ namespace WordCounter.Tests{
     }
 
     [TestMethod]
-    public void Message_ReturnsCorrectViewType_True(){
+    public void Index_ReturnsCorrectViewType_True(){
       WordCounterController controller = new WordCounterController();
-      ActionResult messageView = controller.Message();
+      ActionResult messageView = controller.Index();
       Assert.IsInstanceOfType(messageView, typeof(ViewResult));
     }
 
@@ -41,7 +41,7 @@ namespace WordCounter.Tests{
       WordCounterController controller = new WordCounterController();
       ViewResult newCounterView = controller.Create("bob", "foo") as ViewResult;
       var result = newCounterView.ViewName;
-      Assert.AreEqual(result, "Message");
+      Assert.AreEqual(result, "Index");
     }
   }
 }
